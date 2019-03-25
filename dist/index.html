@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test page for LISA charts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+    <link rel="stylesheet" href="emotionvisualizations.css">
+    <link rel="stylesheet" href="index.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script> -->
+   <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+</head>
+<body>
+
+ <!-- TODO packen, ungifly, minify -->
+ <!-- Todo vielleicht resize hinzufügen, d.h. eine function an alle charts dranhängen, die nochmal draw aufruft -->
+ <!-- TODO Skalierung insgesamt prüfen für mobile hoch/quer und desktop von/bis Auflösungen/Größen-->
+ <!-- TODO Check in all browsers -->
+ <!-- TODO alle Zeilenhöhen angleichen-->
+
+ <!-- TODO intro zu emotionen.-->
+
+ <!-- TODO API-Beschreibung
+TODO prettier anwenden -->
+
+ <!-- TODO fucking sizing on initial load get in flex nicht immer. -->
+
+ <h1> Color coding </h1>
+ <div class="hr-container"><div class="dotted-gradient"></div><hr></div>
+ <div class="flex-horizontal">
+     <div class="flex-horizontal-item" id="chart1"></div>
+     <div class="flex-horizontal-item" style="padding-left: 1em; line-height: 1.3em">
+         <p>For this diagrams we use the definition of an emotion in the two-dimensional coordinate system of
+             valence and arousal. An emotion e is therefore a vector, like the one marked in the graph,
+             <span style="white-space: nowrap">e = (v, a) = (0.3, 0.4) .</span>
+         </p>
+         <p>To define a color coding for emotions and provide easy-to-read visualisations of learning data with
+             associated emotions, we chose four colors:
+         </p>
+         <p>
+         <span class="legend-color-dot positive-high"></span> for positive valence and positive arousal<br>
+         <span class="legend-color-dot negative-high"></span> for negative valence and positive arousal<br>
+         <span class="legend-color-dot negative-low"></span> for negative valence and negative arousal<br>
+         <span class="legend-color-dot positive-low"></span> for positive valence and negative arousal<br>
+         </p>
+         The saturation indicates the distance from mean valence and arousal values. Then, both axes rely each on
+             its own color property. <br>
+         Valence goes from darker colors
+         <div class="legend-color-dot negative-high"></div>, <div class="legend-color-dot negative-low"></div> to lighter
+         <div class="legend-color-dot positive-high"></div>, <div class="legend-color-dot positive-low"></div>. <br>
+         Arousal goes
+         from cooler colors <div class="legend-color-dot negative-low"></div>, <div class="legend-color-dot positive-low"></div>
+         to warmer <div class="legend-color-dot positive-high"></div>, <div class="legend-color-dot negative-high"></div>. <br>
+         This coding follows some of the principles revealed in: <br>Da Pos, O., & Green-Armytage, P. (2007), Facial expressions,
+         colours and basic emotions. In Colour: Design and Creativity by The Society of Dyers and Colourists (UK),
+         Vol 1.
+         <p></p>
+         Because the color codes rely on color properties (instead of concrete colors), the proposed visualisations
+             allow alternative codings to fit corporate styling needs, like for example:
+         <span style="white-space: nowrap">
+         <div class="legend-color-dot" style="background-color: #003cb3"></div>
+         <div class="legend-color-dot" style="background-color: #993333"></div>
+         <div class="legend-color-dot" style="background-color: #339933"></div>
+         <div class="legend-color-dot" style="background-color: #cccc00"></div>
+         </span>
+         <p>For every point its color is defined by its polar coordinates <span style="white-space: nowrap">e = (r, &phi;) .</span></p>
+     </div>
+ </div>
+
+<h1> Time lines of distinct moods </h1>
+ <div class="hr-container"><div class="dotted-gradient"></div><hr></div>
+
+ <p>Example: In the beginning of a learning session, the mood was rather negative, but later it got better,
+    more positive and calm. </p>
+<div class="chart-container" id="chart2"></div>
+
+<h1> Bar charts of distinct moods </h1>
+ <div class="hr-container"><div class="dotted-gradient"></div><hr></div>
+
+<p>Example 2: The chart of moods relations with average performance in quizzes per topic shows, that when having
+    most of the time a high arousal, the user reaches a better performance. </p>
+    <div class="chart-container" id="chart5" style="height:20%"></div>
+
+
+<h1> Scatterplot of performance in emotions</h1>
+ <div class="hr-container"><div class="dotted-gradient"></div><hr></div>
+ <div class="flex-horizontal">
+     <div class="flex-horizontal-item" style="max-width: 300px" id="chart6"></div>
+     <div class="flex-horizontal-item"><p>Example: Most dark dots of good performance gather in two different emotional areas: around mid level arousal and
+         valence, and at higher arousal with a bit positive mood.</p></div>
+ </div>
+
+
+
+<h1> Time, performance and most frequently occuring emotion in a spie chart </h1>
+ <div class="hr-container"><div class="dotted-gradient"></div><hr></div>
+
+ <div class="flex-horizontal">
+     <div class="flex-horizontal-item flex-horizontal" style="padding-right: 1em; line-height: 1.3em">
+         <div class="flex-horizontal-item" id="chart7"></div>
+         <div class="flex-horizontal-item"><p>Example 1: On two topics this user spends much time but still gets a low performance in quizzes, having
+            low arousal moods.</p></div>
+
+     </div>
+     <div class="flex-horizontal-item flex-horizontal" style="padding-left: 1em; line-height: 1.3em">
+         <div class="flex-horizontal-item" id="chart8"></div>
+         <div class="flex-horizontal-item">
+         <p>Example 2: This user behaves differently, spending in a good mood less time on a topic and performing
+            worse. </p></div>
+     </div>
+ </div>
+
+
+ <script src="LisaGraphs.bundle.js"></script>
+ <script src="index.js"></script>
+
+
+</body>
+</html>
