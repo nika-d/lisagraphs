@@ -1,0 +1,19 @@
+{
+  "name": "lisagraphs",
+  "version": "1.0.0",
+  "scripts": {
+    "developlib": "webpack --config webpack.config.lib.js --mode development --watch",
+    "buildlib": "webpack --config webpack.config.lib.js --mode production",
+    "developexample": "webpack --config webpack.config.example.js --mode development --watch",
+    "buildexample": "webpack --config webpack.config.example.js --mode production"
+  },
+  "dependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "d3": "^5.9.2",
+    "vis": "^4.21.0",
+    "babel-loader": "^8.0.5",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "globals": {
+    "d3": false,
+    "vis": false
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    // enable additional rules
+    "indent": ["error", 4],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+
+    // override default options for rules from base configurations
+    "no-cond-assign": ["error", "always"],
+
+    "prefer-const": ["error", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": false
+    }]
+
+  }
+}

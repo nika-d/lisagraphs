@@ -1,0 +1,126 @@
+/* Global definitions */
+:root{
+
+    /* Emotions color coding.
+       Rules to keep initial logic of the coding:
+       Negative valence is darker than positive valence (refers to L-value of HSL-defined color).
+       Low arousal is cooler than high arousal (refers non-linearly to H-value of HSL-defined color, see for
+       example https://en.wikipedia.org/wiki/Color_theory#Warm_vs._cool_colors).
+    */
+    --POSITIVE-HIGH:#FFCD93;
+    --POSITIVE-LOW:#BEE986;
+    --NEGATIVE-HIGH:#C75265;
+    --NEGATIVE-LOW:#618DA2;
+
+
+    /* Consistent styles for all charts.
+    */
+
+    /* Width of the stroke indicating the nearest color code for a shape. */
+    --COLOR-SHAPE-STROKE-WIDTH:2;
+
+    /* Structural chart elements, like grid lines and texts. */
+    --STRUCTURAL-STROKE-WIDTH: 1px;
+    --LIGHT-GREY: #CCCCCC;
+    --DARK-GREY: #AAAAAA;
+}
+
+/* All axes. */
+
+.axis text, .mouseovertext {
+    fill: var(--DARK-GREY);
+}
+
+.axis .grid {
+    stroke-dasharray: 1,2;
+    stroke-width: var(--STRUCTURAL-STROKE-WIDTH);
+    stroke: var(--LIGHT-GREY);
+}
+
+.axis path, .axis line, .axis circle {
+    stroke: var(--DARK-GREY);
+    stroke-linecap: round;
+    stroke-width: var(--STRUCTURAL-STROKE-WIDTH);
+    fill: none;
+    vector-effect: non-scaling-stroke;
+}
+
+/* Smooth display of color coded background. */
+
+.gradient-container {
+    display: flex;
+    align-content: stretch;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.gradient-canvas {
+    flex-grow: 1;
+    position: relative;
+    padding: 0;
+    display: inline;
+}
+
+/* cartesian and polar coordinate systems */
+
+.coordinate-system {
+    min-height: 200px;
+    min-width: 200px;
+    width: 100%; /* in case of flexbox item*/
+}
+
+/* Timeline charts */
+
+.timeline {
+    min-width: 200px;
+}
+
+.vis-time-axis .vis-text {
+    color: var(--DARK-GREY);
+}
+
+.vis-timeline {
+    border: 0
+}
+
+.vis-item.emotion-time-frame {
+    border: none;
+    border-radius: 0;
+}
+
+/* Bar chart */
+
+.horizontal-stacked-bar-chart {
+    min-height: 130px;
+    min-width: 300px;
+}
+
+/* Color definition principle (does not affect data visualising charts). */
+
+.legend-color-dot {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 0.5em;
+    position: relative;
+    top: 0.1em;
+}
+
+.color-definition-principle {
+    min-width: 350px;
+    min-height: 350px;
+}
+
+.positive-high {
+    background-color: var(--POSITIVE-HIGH);
+}
+.positive-low {
+    background-color: var(--POSITIVE-LOW);
+}
+.negative-high {
+    background-color: var(--NEGATIVE-HIGH);
+}
+.negative-low {
+    background-color: var(--NEGATIVE-LOW);
+}
